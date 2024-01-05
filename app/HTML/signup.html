@@ -1,0 +1,92 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign up form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/project/CSS/signup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+          <h2>CREATE ACCOUNT</h2>
+      </div>
+      <form class="form" id="form" action="/signup" method="post" >
+          <div class="form-control ">
+              <label>Username</label>
+              <input type="text" placeholder="Name here" name="username">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+          </div>
+          <div class="form-control ">
+              <label>Email</label>
+              <input type="email" placeholder="gmail@gmail.com" name="email">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+          </div>
+          <div class="form-control">
+              <label>Password</label>
+              <input type="password" placeholder="password" name="password">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+          </div>
+          <div class="form-control">
+              <label>Confirm Password</label>
+              <input type="password" placeholder="password " name="confirm">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+          </div>
+          <button type="submit" id="submit" style="z-index:20;">Submit</button>
+          <br>
+          <button style="background-color:blanchedalmond"><a href="/login">login</a></button>
+      </form>
+  </div>
+  <script src="/project/JAVASCRIPT/signup.js"></script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/project/CSS/signup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+          <h1>Register</h1>
+          <form method="post" action="/signup">
+              <div class="txt_field">
+                  <input type="text" name="username" required>
+                  <span></span>
+                  <label>Name</label>
+              </div>
+              <div class="txt_field">
+                  <input type="email" name="email" required>
+                  <span></span>
+                  <label>Email</label>
+              </div>
+              <div class="txt_field">
+                  <input type="password" name="password" required>
+                  <span></span>
+                  <label>Password</label>
+              </div>
+              <div class="txt_field">
+                  <input type="password" name="confirm" required>
+                  <span></span>
+                  <label>Confirm Password</label>
+              </div>
+              <input name="submit" type="Submit" value="Sign Up">
+              <div class="signup_link">
+                  Have an Account ? <a href="/login">Login Here</a>
+              </div>
+          </form>
+      </div>
+  </div>
+  </body>
+</html>
