@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Request, Form
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from database.database import signup
+from config.config import signup
 from passlib.context import CryptContext
 
 route = APIRouter()

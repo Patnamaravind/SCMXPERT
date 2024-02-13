@@ -1,17 +1,14 @@
+# Use the Python 3.9.8 base image
 FROM python:3.9.8
 
-
-
-#This line sets the working directory inside the container to /SCMEXPERT/app/Socket_connection. Any subsequent commands or instructions will be executed in this directory within the container.
+# Set the working directory inside the container to /DASHBOARD/app/Kafka/Producer/
 WORKDIR /DASHBOARD/app/Kafka/Producer/
 
-#This line copies the contents of the current directory into the above mentioned container's workdir
+# Copy the contents of the current directory into the container's workdir
 COPY . /DASHBOARD/app/Kafka/Producer/
 
-
-#This line runs the pip3 install command inside the container to install the specified Python packages.
+# Install required Python packages using pip inside the container
 RUN pip install python-dotenv confluent_kafka
 
-
-#whenever container runs, this default command will be executed..
+# Define the default command to execute when the container runs
 CMD ["python", "Producer.py"]

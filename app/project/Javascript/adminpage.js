@@ -1,3 +1,7 @@
+if (localStorage.getItem("access_token") === null) {
+    window.location.href= "/login";
+}
+
 function logout() {
     localStorage.removeItem("access_token");
     sessionStorage.removeItem("username");

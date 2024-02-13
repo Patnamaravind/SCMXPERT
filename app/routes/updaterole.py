@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException,Request,Depends
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from routes.Jwt_Token import get_current_user
-from database.database import signup 
+from config.config import signup 
 from fastapi.responses import JSONResponse 
 
 
@@ -36,7 +36,7 @@ def change(request: Request, user: dict, token: str = Depends(get_current_user))
         
         # Check if the user already has the admin role
         if result["role"] == "admin":
-            return JSONResponse(content={"message": "User is already an admin"}, status_code=200)
+            return JSONResponse(content={"message": "User is already an admin"}, status_code=400)
 
         result1 = signup.update_one({"user": user["user"]}, {"$set": {"role": "admin"}})
         if result1.modified_count > 0:

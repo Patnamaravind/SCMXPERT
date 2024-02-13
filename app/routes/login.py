@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from passlib.context import CryptContext
-from database.database import signup
+from config.config import signup
 from routes.Jwt_Token import create_access_token
 
 route = APIRouter()

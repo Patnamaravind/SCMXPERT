@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (response.status === 200) {
                     return response.json();
                 } else {
-                    throw new Error(response.status);
+                    throw new Error("All fields must be filled");
                 }
             })
             .then(jsonresponse => {
