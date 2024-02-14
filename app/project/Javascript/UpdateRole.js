@@ -1,6 +1,11 @@
 if (localStorage.getItem("access_token") === null) {
     window.location.href= "/login";
 }
+if (sessionStorage.getItem("role")!=="admin"){
+    alert("only admin can change")
+    window.location.href= "/Dashboard";
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     $(document).ready(function () {

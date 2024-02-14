@@ -15,7 +15,7 @@ pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 @route.get("/login")
 def login(request: Request):
-    return html.TemplateResponse("login.html", {"request": request})
+    return html.TemplateResponse("Login.html", {"request": request})
 
 
 @route.post("/login")

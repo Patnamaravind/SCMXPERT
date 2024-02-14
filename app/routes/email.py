@@ -22,21 +22,7 @@ pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
 def email(request: Request):
     return html.TemplateResponse("PasswordChange.html", {"request": request})
 
-# Route to handle password change submission
-# @route.post("/changepassword")
-# def change(request: Request, email: str = Form(...), password: str = Form(), confirm: str = Form(...)):
-#     result = signup.find_one({"email": email})
 
-#     if result:
-#         # Check if password and confirm_password match
-#         if password == confirm:
-#                 pw = pwd_cxt.hash(password)
-#                 # Update password for the given email
-#                 signup.update_one({"email": email}, {"$set": {"password": pw, "confirmpassword": confirm}})
-#                 # Redirect to login page with success message
-#                 return html.TemplateResponse("login.html", {"request": request, "message": "Password updated successfully"})
-#     # Redirect to the emailget page with an error message
-#     return html.TemplateResponse("PasswordChange.html", {"request": request, "message": "Invalid email"})
 @route.post("/changepassword")
 def change(request: Request, email: str = Form(...), password: str = Form(), confirm: str = Form(...)):
     try:

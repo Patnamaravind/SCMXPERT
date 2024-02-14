@@ -10,7 +10,6 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
 
 # Function to create an access token with an optional expiration time (expires_delta).
-
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
     if expires_delta:
