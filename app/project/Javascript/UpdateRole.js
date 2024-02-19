@@ -4,8 +4,12 @@ if (localStorage.getItem("access_token") === null) {
 }
 
 if (sessionStorage.getItem("role") === "user") {
+<<<<<<< HEAD
     alert("Only Admin can change")
     window.location.href = "/Dashboard";
+=======
+    window.location.href = "/login";
+>>>>>>> d29e972 (eight commit)
 }
 
 document.addEventListener("DOMContentLoaded", function () {

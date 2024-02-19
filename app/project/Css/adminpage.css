@@ -72,7 +72,11 @@
   .icon {
     position: fixed;
     top: 10px;
+<<<<<<< HEAD
     right: 115px;
+=======
+    right: 85px;
+>>>>>>> d29e972 (eight commit)
     height: 30px;
   }
   

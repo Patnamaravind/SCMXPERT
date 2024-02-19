@@ -57,6 +57,26 @@ thead th:first-child {
   z-index: 3;
 }
 
+<<<<<<< HEAD
+=======
+/* tfoot {
+  position: -webkit-sticky;
+  bottom: 0;
+  z-index: 2;
+}
+
+tfoot td {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  font-size: 20px;
+  background: hsl(20, 50%, 70%);
+}
+
+tfoot td:first-child {
+  z-index: 3;
+} */
+>>>>>>> d29e972 (eight commit)
 
 tbody {
   overflow: scroll;

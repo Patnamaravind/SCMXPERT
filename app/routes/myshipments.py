@@ -3,8 +3,13 @@ from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from config.config import shipment
+<<<<<<< HEAD
 from routes.Jwt_Token import oauth2_scheme,decode_token
 from models.models import ShipmentData
+=======
+from pydantic import BaseModel
+from routes.Jwt_Token import oauth2_scheme,decode_token
+>>>>>>> d29e972 (eight commit)
 
 # Create an instance of APIRouter to define routes for this specific API section
 route = APIRouter()
@@ -52,7 +57,12 @@ def sign1(request: Request, shipment1: ShipmentData, token: str = Depends(oauth2
             "serial_number": shipment1.serial_number,
             "shipment_description": shipment1.shipment_description
         }
+<<<<<<< HEAD
 #  
+=======
+ 
+
+>>>>>>> d29e972 (eight commit)
         # Insert shipment data into the database
         shipment.insert_one(base)
         return JSONResponse(content={"error_message": "Shipment Created Successfully"},status_code=200)
