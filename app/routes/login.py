@@ -214,7 +214,7 @@ def decode_token(token: str):
 
 
 # Protected endpoint
-@route.get("/protected")
+
 async def protected_route(token: str = Depends(oauth2_scheme)):
     try:
         payload = decode_token(token)
@@ -222,7 +222,7 @@ async def protected_route(token: str = Depends(oauth2_scheme)):
             username = payload["sub"]
             user_data = signup.find_one({"user": username})
             if user_data and "user" in user_data:
-                return {"message": "Access granted"}
+                                          return {"message": "Access granted"}
     except HTTPException as e:
         raise e
     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")

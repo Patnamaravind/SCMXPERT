@@ -1,100 +1,20 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-
-<head> 
-	<meta charset="UTF-8"> 
-	<meta http-equiv="X-UA-Compatible"
-		content="IE=edge"> 
-	<meta name="viewport"
-		content="width=device-width, 
-				initial-scale=1.0"> 
-	<title>DASHBOARD</title> 
-	<link rel="stylesheet"
-		href="/project/CSS/dashboard.css"> 
-	
-</head> 
-<body> 
-	<!-- for header part -->
-	<header> 
-
-		<div class="logosec"> 
-			
-			<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-				class="icn menuicn"
-				id="menuicn"
-				alt="menu-icon"> 
-				<div class="logo">EXAFLUENCE</div> 
-		</div> 
-			<div class="dp"> 
-			<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-					class="dpicn"
-					alt="dp"> 
-			</div> 
-		</div> 
-	</header> 
-	<div class="main-container"> 
-		<div class="navcontainer"> 
-			<nav class="nav"> 
-				<div class="nav-upper-options"> 
-					<div class="nav-option option1"> 
-						<img src="/project/IMAGES/EXF.jpg" class="dp" alt="dashboard"> 
-                        <h3>EXAFLUENCE</h3> 
-					</div> 
-					<div class="option2 nav-option"> 
-						<img src="/project/IMAGES/dash.jpg"class="nav-img"alt="articles"> 
-						<a href="/project/HTML/dashboard.html"><h3>Dashboard</h3> </a>
-					</div>
-					<div class="nav-option option3"> 
-						<img src="/project/IMAGES/myaccotn.jpg" class="nav-img" alt="report"> 
-						<a href="myship.html"><h3>My Shipment</h3> </a>
-					</div> 
-					<div class="nav-option option4"> 
-						<img src= "/project/IMAGES/db.jpg" class="nav-img"alt="institution"> 
-						<a href="shipment.html"><h3>New Shipment</h3> </a>
-					</div> 
-
-					<div class="nav-option option5"> 
-						<img src="/project/IMAGES/database1.jpg" class="nav-img" alt="blog"> 
-						<a href="/devicedata"><h3>Device Data</h3> </a>
-					</div> 
-<br><br><br><br><br><br><br><br><br><br><br><br>
-					<div class="nav-option logout"> 
-						<img src="/project/IMAGES/logout.jpg" class="nav-img" alt="logout"> 
-						<a href="/project/HTML/login.html"><h3>&nbsp;Logout</h3> </a>
-					</div> 
-				</div> 
-			</nav> 
-		</div> 
-		<div class="main"> 
-<link rel="stylesheet" href="/project/CSS/sliding.css" />
-<div class="container">
-    <div class="split left">
-      <h1>Create Shipment</h1>
-      <a href="shipment.html" class="button">NEW SHIPMENT</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/app/project/CSS/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="contact-details">
+            <p><strong>Company Name:</strong> Your Company Name</p>
+            <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            <p><strong>Email:</strong> info@yourcompany.com</p>
+            <p><strong>Phone:</strong> +1 234 567 890</p>
+        </div>
     </div>
-    <div class="split right">
-      <h1>Get Database</h1>
-      <a href="myship.html" class="button">GET DATA</a>
-
-    </div>
-	<p id="value" style="display: none;">{{token}}</p>
-	<script src="/project/JAVASCRIPT/sliding.js"></script>
-  </div>
-  <script>
-
-
-  var access = document.getElementById("value");
-  var access1 = access.textContent;
-  // Store the token in localStorage
-  localStorage.setItem('authToken', access1);
-  // Optionally, retrieve and log the stored token
-//   const storedToken = localStorage.getItem('authToken');
-//   console.log('Token stored in localStorage:', storedToken);
-
-</script>
-	<script src="/project/JAVASCRIPT/dashboard.js"></script> 
-	</div>
-</body> 
+</body>
 </html>
