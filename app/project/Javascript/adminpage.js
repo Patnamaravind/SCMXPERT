@@ -8,11 +8,8 @@ function logout() {
 
 if (localStorage.getItem("access_token") === null) {
     window.location.href= "/login";
-<<<<<<< HEAD
 }
 
 function Dashboard(){
     window.location.href="/Dashboard"
-=======
->>>>>>> d29e972 (eight commit)
 }

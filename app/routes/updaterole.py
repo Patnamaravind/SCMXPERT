@@ -16,11 +16,7 @@ route.mount("/project", StaticFiles(directory="project"), name = "project")
 def email(request: Request):
     return html.TemplateResponse("UpdateRole.html", {"request": request})
 
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> d29e972 (eight commit)
 
 @route.post("/changeroleuser")
 def change(request: Request, user: dict, token: str = Depends(get_current_user)):

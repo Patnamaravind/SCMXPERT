@@ -67,11 +67,7 @@ $(document).ready(function () {
                     $("#table_data1").html(ship_data);
                 } else {
                     throw new Error("Invalid data format");
-<<<<<<< HEAD
                     // $("#error").text("Invalid data format");
-=======
-                    $("#error").text("Invalid data format");
->>>>>>> d29e972 (eight commit)
                 }
             })
             .catch(error => {
