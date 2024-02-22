@@ -52,8 +52,7 @@ def sign1(request: Request, shipment1: ShipmentData, token: str = Depends(oauth2
             "serial_number": shipment1.serial_number,
             "shipment_description": shipment1.shipment_description
         }
- 
-
+#  
         # Insert shipment data into the database
         shipment.insert_one(base)
         return JSONResponse(content={"error_message": "Shipment Created Successfully"},status_code=200)
