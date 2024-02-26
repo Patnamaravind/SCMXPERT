@@ -38,6 +38,10 @@ def login(request: Request, username: str = Form(...), password: str = Form(...)
         # Handle other exceptions with a 500 status code
         return JSONResponse(content={"detail": str(e)}, status_code=500)
 
+    
+
+
+
 
 
 

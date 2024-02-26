@@ -8,13 +8,13 @@ from config.config import signup,SECRET_KEY,ALGORITHM,ACCESS_TOKEN_EXPIRE_MINUTE
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
-
 # Function to create an access token with an optional expiration time (expires_delta).
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
+        print(expire)
     else:
         expire = datetime.utcnow() + timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp": expire})
@@ -39,10 +39,8 @@ def decode_token(token: str):
                             headers={"WWW-Authenticate": "Bearer"})
     
     
-#A function that depends on the oauth2_scheme to extract and validate the access token. 
-#It uses the decode_token function to decode the token and fetch user data from the database.
+
 def get_current_user(token: str = Depends(oauth2_scheme)):
-   
     try:
         # print(token)
         payload = decode_token(token)

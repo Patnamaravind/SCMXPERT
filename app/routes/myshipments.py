@@ -12,7 +12,6 @@ html = Jinja2Templates(directory="Templates")
 route.mount("/project", StaticFiles(directory="project"), name="project")
 
 
-
 @route.get("/Newshipments")
 def sign(request: Request):
     return html.TemplateResponse("NewShipment.html", {"request": request})
@@ -52,8 +51,6 @@ def sign1(request: Request, shipment1: ShipmentData, token: str = Depends(oauth2
             "serial_number": shipment1.serial_number,
             "shipment_description": shipment1.shipment_description
         }
- 
-
         # Insert shipment data into the database
         shipment.insert_one(base)
         return JSONResponse(content={"error_message": "Shipment Created Successfully"},status_code=200)
@@ -63,7 +60,6 @@ def sign1(request: Request, shipment1: ShipmentData, token: str = Depends(oauth2
     except Exception as e:
         # Handle other exceptions with a 500 status code
         return JSONResponse(content={"detail": str(e)}, status_code=500)
-
 
 
 
