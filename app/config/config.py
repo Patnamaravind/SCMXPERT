@@ -16,7 +16,7 @@ SECRET_KEY = secrets.token_hex(32)
 # JWT algorithm for token encoding and decoding
 ALGORITHM = "HS256"
 
-# Expiration time for access tokens in minutes
+# Expiration time for access tokens in minutes variable
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 
