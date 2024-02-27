@@ -7,6 +7,15 @@ if (sessionStorage.getItem("role")!=="admin"){
 }
 
 
+if (sessionStorage.getItem("role") === "user") {
+<<<<<<< HEAD
+    alert("Only Admin can change")
+    window.location.href = "/Dashboard";
+=======
+    window.location.href = "/login";
+>>>>>>> d29e972 (eight commit)
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     $(document).ready(function () {
         $("#submit").on("click", function (event) {
@@ -28,13 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         return response.json();
                     })
                     .then(response => {
-                        console.log(response);
+                        // console.log(response);
                         $("#error").text(response.message);
                     })
                     .catch(error => {
-                        console.log("Error:", error.message);
+                        // console.log("Error:", error.message);
                         $("#error").text("user not found");
-  
                     });
             } else {
                 console.log("Token not available. Perform authentication or redirect to login page.");

@@ -1,22 +1,39 @@
 version: '3'
 
 services:
+<<<<<<< HEAD
   scmxpert: #app
     image: psaravind321/scmxpert:latest
     ports:
       - "8000:8000"
+=======
+    scmxpert:
+     image: psaravind321/scmxpert:latest
+     ports:
+       - "8000:8000"
+>>>>>>> master1
 
+    zookeeper:
+      image: 'bitnami/zookeeper:latest'
+      ports:
+       - "2181:2181"
+      depends_on:
+        - scmxpert
+      environment:
+        - ALLOW_ANONYMOUS_LOGIN=yes
 
-  # Zookeper for Kafka
-  zookeeper:
-    image: 'bitnami/zookeeper:latest'  # Use Bitnami Zookeeper image
-    ports:
-      - "2181:2181"
-    depends_on:
-      - scmxpert
-    environment:
-      - ALLOW_ANONYMOUS_LOGIN=yes
+    kafka:
+      image: 'bitnami/kafka:latest'
+      ports:
+       - "9092:9092"
+      depends_on:
+       - zookeeper
+      environment:
+       - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+       - ALLOW_PLAINTEXT_LISTENER=yes
+       - KAFKA_HEAP_OPTS=-Xmx1G
 
+<<<<<<< HEAD
  
   kafka:
     image: 'bitnami/kafka:latest'
@@ -54,3 +71,27 @@ services:
       - bootstrap_servers=kafka:9092
     depends_on:
       - producer
+=======
+    server:
+     image: psaravind321/server:latest
+     ports:
+       - "12345:12345"
+     depends_on:
+       - kafka
+
+    producer:
+     image: psaravind321/producer:latest
+     environment:
+       - bootstrap_servers=kafka:9092
+       - host=server
+     depends_on:
+       - server
+
+    consumer:
+     image: psaravind321/consumer:latest
+     environment:
+       - bootstrap_servers=kafka:9092
+     depends_on:
+       - producer
+                                
+>>>>>>> master1

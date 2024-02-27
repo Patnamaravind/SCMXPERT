@@ -57,6 +57,11 @@ thead th:first-child {
   z-index: 3;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> master1
 /* tfoot {
   position: -webkit-sticky;
   bottom: 0;
@@ -74,6 +79,10 @@ tfoot td {
 tfoot td:first-child {
   z-index: 3;
 } */
+<<<<<<< HEAD
+=======
+>>>>>>> d29e972 (eight commit)
+>>>>>>> master1
 
 tbody {
   overflow: scroll;

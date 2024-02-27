@@ -3,8 +3,18 @@ from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from config.config import shipment
+<<<<<<< HEAD
 from pydantic import BaseModel
 from routes.Jwt_Token import oauth2_scheme,decode_token
+=======
+<<<<<<< HEAD
+from routes.Jwt_Token import oauth2_scheme,decode_token
+from models.models import ShipmentData
+=======
+from pydantic import BaseModel
+from routes.Jwt_Token import oauth2_scheme,decode_token
+>>>>>>> d29e972 (eight commit)
+>>>>>>> master1
 
 # Create an instance of APIRouter to define routes for this specific API section
 route = APIRouter()
@@ -13,26 +23,11 @@ route.mount("/project", StaticFiles(directory="project"), name="project")
 
 
 
-# Define a Pydantic model for representing shipment data in the request body
-class ShipmentData(BaseModel):
-    shipment_number: int
-    container_number: int
-    route_details: str
-    goods_type: str
-    device: int
-    expected_delivery: str
-    po_number: int
-    delivery_number: int
-    ndc_number: int
-    batch_id: int
-    serial_number: int
-    shipment_description: str
-
-@route.get("/myshipments")
+@route.get("/Newshipments")
 def sign(request: Request):
     return html.TemplateResponse("NewShipment.html", {"request": request})
 
-@route.post("/myshipments")
+@route.post("/Newshipments")
 def sign1(request: Request, shipment1: ShipmentData, token: str = Depends(oauth2_scheme)):
     try:
         # Check if any field is empty
@@ -49,7 +44,11 @@ def sign1(request: Request, shipment1: ShipmentData, token: str = Depends(oauth2
 
         # Decode token to get user email
         decoded_token = decode_token(token[7:len(token)])
+<<<<<<< HEAD
         print(decoded_token)
+=======
+        # print(decoded_token)
+>>>>>>> master1
 
         base = {
             "user":decoded_token["sub"],
@@ -67,8 +66,15 @@ def sign1(request: Request, shipment1: ShipmentData, token: str = Depends(oauth2
             "serial_number": shipment1.serial_number,
             "shipment_description": shipment1.shipment_description
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+#  
+=======
+>>>>>>> master1
  
 
+>>>>>>> d29e972 (eight commit)
         # Insert shipment data into the database
         shipment.insert_one(base)
         return JSONResponse(content={"error_message": "Shipment Created Successfully"},status_code=200)

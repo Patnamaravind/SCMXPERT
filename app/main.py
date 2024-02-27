@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from fastapi.middleware.cors import CORSMiddleware
+
+
 
 # Import route instances from separate route files
 from routes.dashboard import route as dash
@@ -16,11 +17,16 @@ from routes.email import route as email
 from routes.adminpage import route as admin
 from routes.updaterole import route as role
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master1
 
 # Create a FastAPI instance
 app = FastAPI()
 
 
+<<<<<<< HEAD
 # Specify allowed origins for CORS (Cross-Origin Resource Sharing)
 origins = [
     "*"
@@ -34,6 +40,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+=======
+>>>>>>> master1
 
 # html = Jinja2Templates(directory="HTML")
 html = Jinja2Templates(directory="Templates")
@@ -53,3 +61,7 @@ app.include_router(email)
 app.include_router(admin)
 app.include_router(role)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master1

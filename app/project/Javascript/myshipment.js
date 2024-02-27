@@ -101,7 +101,7 @@ $(document).ready(function(){
         })
         .catch(error => {
             $("#error").text(error.message);
-            $("#error").css("visibility", "visible");
+            // $("#error").css("visibility", "visible");
             setTimeout(function () {
                 $("#error").text("");
             }, 2000);

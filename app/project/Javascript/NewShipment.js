@@ -1,4 +1,3 @@
-
 if (localStorage.getItem("access_token") === null) {
     window.location.href= "/login";
 }
@@ -39,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (!isTokenExpired()) {
-            fetch("/myshipments", {
+            fetch("/Newshipments", {
                 method: "POST",
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem("access_token")}`,
@@ -64,7 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (response.status === 200) {
                     return response.json();
                 } else {
+<<<<<<< HEAD
                     throw new Error("All fields must be filled");
+=======
+                    throw new Error("fill the form please");
+>>>>>>> master1
                 }
             })
             .then(jsonresponse => {
@@ -82,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 console.log("Error:", error.message);
                 $("#error").text(error.message);
-                $("#error").css("visibility", "visible");
+                // $("#error").css("visibility", "visible");
                 setTimeout(function () {
                     $("#error").text("");
                 }, 2000);

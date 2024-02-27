@@ -3,12 +3,30 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from config.config import signup
 from passlib.context import CryptContext
+<<<<<<< HEAD
+from models.models import Signup
+
+=======
+from pydantic import BaseModel
+>>>>>>> d29e972 (eight commit)
 
 route = APIRouter()
 html = Jinja2Templates(directory="Templates")
 route.mount("/project", StaticFiles(directory="project"), name="project")
 
 pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+
+<<<<<<< HEAD
+=======
+class Signup(BaseModel):
+    user: str
+    email: str
+    role: str
+    password: str
+    confirmpassword: str
+
+>>>>>>> d29e972 (eight commit)
 
 @route.get("/signup")
 def sign(request: Request):
@@ -17,7 +35,7 @@ def sign(request: Request):
 @route.post("/signup")
 def sign(request: Request, username: str = Form(...), email: str = Form(...), role: str = Form("user"),
          password: str = Form(...), confirm: str = Form(...)):
-    existing_user = signup.find_one({"username": username})  # db query
+    existing_user = signup.find_one({"user": username})  # db query
     existing_email = signup.find_one({"email": email}) 
     # print(existing_email,existing_user) # db query
     try:
@@ -39,14 +57,22 @@ def sign(request: Request, username: str = Form(...), email: str = Form(...), ro
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
     pw = pwd_cxt.hash(password)
+<<<<<<< HEAD
+    signup1=Signup(user=username, email=email,role=role,password=pw,confirmpassword=pw)
 
-    signupdata = {
-        "user": username,
-        "email": email,
-        "role": role,
-        "password": pw,
-        "confirmpassword": confirm
-    }
-    signup.insert_one(signupdata)
+=======
+    signup1=Signup(user=username, email=email,role=role,password=pw,confirmpassword=confirm)
+
+    # signupdata = {
+    #     "user": username,
+    #     "email": email,
+    #     "role": role,
+    #     "password": pw,
+    #     "confirmpassword": confirm
+    # }
+
+>>>>>>> d29e972 (eight commit)
+    
+    signup.insert_one(dict(signup1))
     return html.TemplateResponse("SignupPage.html", {"request": request,"success_message": "User registered successfully"})
   
