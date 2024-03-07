@@ -53,5 +53,4 @@ function logout() {
     sessionStorage.removeItem("role");
     window.location.href= "/";
         // You can add more cleanup here if needed
-    }
-    
+}

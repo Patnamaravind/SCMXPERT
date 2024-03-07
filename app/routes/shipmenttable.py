@@ -6,7 +6,6 @@ from routes.Jwt_Token import get_current_user
 from config.config import shipment
 
 
-
 route=APIRouter()
 html = Jinja2Templates(directory = "Templates")
 route.mount("/project", StaticFiles(directory="project"), name = "project")

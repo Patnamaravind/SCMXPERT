@@ -26,8 +26,6 @@ def email(request: Request):
     return html.TemplateResponse("ForgetPassword.html", {"request": request})
 
 
-
-
 @route.post("/changepassword")
 def change(request: Request, email: str = Form(...), password: str = Form(), confirm: str = Form(...)):
     try:
@@ -47,7 +45,6 @@ def change(request: Request, email: str = Form(...), password: str = Form(), con
         # Handle other exceptions with a 500 status code
         return JSONResponse(content={"detail": str(e)}, status_code=500)
     
-
 
 @route.get("/changepassword1")
 def email(request: Request):

@@ -5,26 +5,21 @@ from datetime import datetime, timedelta
 from typing import Optional
 from config.config import signup,SECRET_KEY,ALGORITHM,ACCESS_TOKEN_EXPIRE_MINUTES
 
-
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
 # Function to create an access token with an optional expiration time (expires_delta).
-
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
-        print(expire)
     else:
         expire = datetime.utcnow() + timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-
 # Function to decode a token, checking for expiration and handling exceptions.
 def decode_token(token: str):
-   
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         # Check token expiration
@@ -37,8 +32,6 @@ def decode_token(token: str):
     except JWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token",
                             headers={"WWW-Authenticate": "Bearer"})
-    
-    
 
 def get_current_user(token: str = Depends(oauth2_scheme)):
     try:
@@ -55,3 +48,4 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
         pass
 
     return None
+

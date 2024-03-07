@@ -5,18 +5,13 @@ from routes.Jwt_Token import get_current_user
 from config.config import signup 
 from fastapi.responses import JSONResponse 
 
-
 route=APIRouter()
-
 html = Jinja2Templates(directory = "Templates")
-
 route.mount("/project", StaticFiles(directory="project"), name = "project")
 
 @route.get("/changerole")
 def email(request: Request):
     return html.TemplateResponse("UpdateRole.html", {"request": request})
-
-
 
 @route.post("/changeroleuser")
 def change(request: Request, user: dict, token: str = Depends(get_current_user)):

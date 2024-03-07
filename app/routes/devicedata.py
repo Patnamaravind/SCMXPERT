@@ -9,11 +9,9 @@ client = MongoClient('mongodb+srv://aravindsvec123:4bwm2d4mPsrAubxJ@cluster0.zef
 db = client['SCMXpert'] 
 collection = db['DeviceData']
 
-
 route = APIRouter()
 html = Jinja2Templates(directory="Templates")
 route.mount("/project", StaticFiles(directory="project"), name="project")
-
 
 @route.get("/devicedata")
 def sign(request: Request):

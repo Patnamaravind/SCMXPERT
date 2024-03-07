@@ -11,7 +11,6 @@ route = APIRouter()
 html = Jinja2Templates(directory="Templates")
 route.mount("/project", StaticFiles(directory="project"), name="project")
 
-
 @route.get("/Newshipments")
 def sign(request: Request):
     return html.TemplateResponse("NewShipment.html", {"request": request})

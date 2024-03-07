@@ -9,9 +9,7 @@ from models.models import Signup
 route = APIRouter()
 html = Jinja2Templates(directory="Templates")
 route.mount("/project", StaticFiles(directory="project"), name="project")
-
 pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
 
 
 @route.get("/signup")

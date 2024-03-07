@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = '/adminpage';
     }
 });
+
 // Fetch device data on button click
 $(document).ready(function () {
     $("#submit").on("click", function (event) {
@@ -94,3 +95,4 @@ function logout() {
     sessionStorage.clear();
     window.location.href = "/";
 }
+
