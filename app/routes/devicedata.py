@@ -17,7 +17,7 @@ route.mount("/project", StaticFiles(directory="project"), name="project")
 def sign(request: Request):
     return html.TemplateResponse("DeviceData.html", {"request": request})
 
-# Route to get device data based on Device_ID
+# Route to get device data based on Device_IDs
 @route.post("/devicedatafirst")
 async def get_device_data(request: Request, token: str = Depends(get_current_user)):
     try:
